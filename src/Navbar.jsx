@@ -12,7 +12,6 @@ import { Link } from 'react-router-dom';
 import { styled, useTheme } from '@mui/system';
 
 const StyledLink = styled(Link)(({ theme }) => ({
-  color: 'black', // Text color
   textDecoration: 'none',
   marginLeft: theme.spacing(2),
 }));
@@ -26,7 +25,7 @@ const Navbar = () => {
   };
 
   return (
-    <AppBar position="static" sx={{ backgroundColor: 'yellow' }}> {/* AppBar color */}
+    <AppBar position="static" sx={{ backgroundColor: 'orange' }}> {/* AppBar color */}
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <IconButton
@@ -49,22 +48,22 @@ const Navbar = () => {
           </Typography>
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             <StyledLink to="/">
-              <Button sx={{ mx: 2 }}> {/* Button text color is inherited */}
+              <Button sx={{ mx: 2, color:"black" }}> {/* Button text color is inherited */}
                 Home
               </Button>
             </StyledLink>
             <StyledLink to="/aboutus">
-              <Button sx={{ mx: 2 }}>
+              <Button sx={{ mx: 2,color:"black" }}>
                 About Us
               </Button>
             </StyledLink>
             <StyledLink to="/programs">
-              <Button sx={{ mx: 2 }}>
+              <Button sx={{ mx: 2,color:"black" }}>
                 Programs
               </Button>
             </StyledLink>
             <StyledLink to="/contactus">
-              <Button sx={{ mx: 2 }}>
+              <Button sx={{ mx: 2,color:"black" }}>
                 Contact Us
               </Button>
             </StyledLink>
