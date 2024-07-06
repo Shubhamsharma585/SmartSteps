@@ -9,15 +9,16 @@ import CloseIcon from '@mui/icons-material/Close';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
-import { styled } from '@mui/system';
+import { styled, useTheme } from '@mui/system';
 
-const StyledLink = styled(Link)({
-  color: 'inherit',
+const StyledLink = styled(Link)(({ theme }) => ({
+  color: 'black', // Text color
   textDecoration: 'none',
-  marginLeft: theme => theme.spacing(2),
-});
+  marginLeft: theme.spacing(2),
+}));
 
 const Navbar = () => {
+  const theme = useTheme();
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -25,7 +26,7 @@ const Navbar = () => {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" sx={{ backgroundColor: 'yellow' }}> {/* AppBar color */}
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <IconButton
@@ -48,27 +49,27 @@ const Navbar = () => {
           </Typography>
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             <StyledLink to="/">
-              <Button sx={{ mx: 2, color: 'white' }}>
+              <Button sx={{ mx: 2 }}> {/* Button text color is inherited */}
                 Home
               </Button>
             </StyledLink>
             <StyledLink to="/aboutus">
-              <Button sx={{ mx: 2, color: 'white' }}>
+              <Button sx={{ mx: 2 }}>
                 About Us
               </Button>
             </StyledLink>
             <StyledLink to="/programs">
-              <Button sx={{ mx: 2, color: 'white' }}>
+              <Button sx={{ mx: 2 }}>
                 Programs
               </Button>
             </StyledLink>
             <StyledLink to="/contactus">
-              <Button sx={{ mx: 2, color: 'white' }}>
+              <Button sx={{ mx: 2 }}>
                 Contact Us
               </Button>
             </StyledLink>
             <StyledLink to="/test">
-              <Button sx={{ mx: 2, color: 'white' }}>
+              <Button sx={{ mx: 2 }}>
                 Test
               </Button>
             </StyledLink>
@@ -78,22 +79,22 @@ const Navbar = () => {
         {menuOpen && (
           <Box sx={{ mt: 2 }}>
             <StyledLink to="/">
-              <Button sx={{ mx: 2, color: 'white', display: 'block' }}>
+              <Button sx={{ mx: 2, display: 'block' }}>
                 Home
               </Button>
             </StyledLink>
             <StyledLink to="/aboutus">
-              <Button sx={{ mx: 2, color: 'white', display: 'block' }}>
+              <Button sx={{ mx: 2, display: 'block' }}>
                 About Us
               </Button>
             </StyledLink>
             <StyledLink to="/programs">
-              <Button sx={{ mx: 2, color: 'white', display: 'block' }}>
+              <Button sx={{ mx: 2, display: 'block' }}>
                 Programs
               </Button>
             </StyledLink>
             <StyledLink to="/contactus">
-              <Button sx={{ mx: 2, color: 'white', display: 'block' }}>
+              <Button sx={{ mx: 2, display: 'block' }}>
                 Contact Us
               </Button>
             </StyledLink>
