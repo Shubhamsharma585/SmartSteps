@@ -8,7 +8,7 @@ function Home() {
     {/* Header */}
     <Box my={4}>
       <Typography variant="h2" component="h1" gutterBottom>
-        Welcome to Career Counselling
+        Welcome to Smart Steps
       </Typography>
       <Typography variant="h6" component="h2" color="textSecondary">
         Guiding Students Towards a Brighter Future
